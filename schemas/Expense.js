@@ -9,7 +9,8 @@ const expenseSchema = new mongoose.Schema({
   categories: [{ type: mongoose.Types.ObjectId, ref: "Category"}] ,//{type:Array},
   status: {
     type: String,
-    enum: ["paid", "unpaid", "partially paid", "unknown"],
+    enum: ["paid", "unpaid", "partially paid", "unknown",'' && 'paid'],
+    default:'paid'
   },
   created_at: { type: Date, default: () => new Date(), immutable: true },
   updated_at: { type: Date, default: () => new Date() },
